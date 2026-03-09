@@ -2,9 +2,9 @@
 
 on:
   push:
-    branches: [test, uat, main]
+    branches: [test, uat, main, backend]
   pull_request:
-    branches: [test, uat, main]
+    branches: [test, uat, main, backend]
   workflow_dispatch:
     inputs:
       pipeline_mode:
@@ -55,7 +55,7 @@ on:
 
 jobs:
   call-backend-orchestrator:
-    uses: ImplementSprint/central-workflow/.github/workflows/master-pipeline-backend.yml@main
+    uses: ImplementSprint/central-workflow/.github/workflows/master-pipeline-backend.yml@backend
     with:
       pipeline_mode: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.pipeline_mode || 'auto' }}
       enable_security_scan: ${{ github.event_name == 'workflow_dispatch' && fromJSON(github.event.inputs.enable_security_scan || 'true') || true }}
