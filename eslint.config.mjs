@@ -40,4 +40,16 @@ export default tseslint.config(
       "prettier/prettier": ["error", { endOfLine: "auto" }],
     },
   },
+  {
+    files: ['tests/performance/*.js'],
+    languageOptions: {
+      sourceType: 'module',
+      parserOptions: {
+        projectService: false,
+      },
+      globals: {
+        __ENV: 'readonly',
+      },
+    },
+  },
 );
