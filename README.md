@@ -14,8 +14,8 @@ Reusable NestJS backend template with strict TypeScript defaults and caller-orie
 
 - Framework: NestJS 11
 - Runtime: Node.js 20
-- Language: TypeScript strict mode
-- Testing: Jest + Supertest
+- Language: TypeScript strict mode.
+- Testing: Jest + Supertest.
 - Linting: ESLint + TypeScript ESLint + Prettier
 - CI/CD: GitHub Actions caller workflow + local fallback workflow
 
